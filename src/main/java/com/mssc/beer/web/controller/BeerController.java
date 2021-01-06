@@ -46,7 +46,7 @@ public class BeerController {
 		BeerDto saved = beerService.saveNewBeer(beer);
 		HttpHeaders headers = new HttpHeaders();
 		headers.add("Location", "/api/v1/beer/" + saved.getId().toString());
-		return new ResponseEntity<BeerDto>(saved, HttpStatus.CREATED);
+		return new ResponseEntity<BeerDto>(headers, HttpStatus.CREATED);
 	}
 
 	@PutMapping({ "/{beerId}" })
